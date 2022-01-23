@@ -1,0 +1,73 @@
+button{
+	padding: none;
+	border-radius: 10px;
+ animation: animate 4s linear infinite;
+}
+@keyframes animate{
+	0%{
+		background-color:red;
+	}
+	5%{
+		background-color:orange;
+	}
+
+10%{
+		background-color:yellow;
+	}
+
+15%{
+		background-color:green;
+	}
+
+20%{
+		background-color:blue;
+	}
+	25%{
+		background-color:violet;
+	}
+
+30%{
+		background-color:indigo;
+	}
+	35%{
+		background-color:white;
+	}
+40%{
+		background-color:maroon;
+	}
+	45%{
+		background-color:gold;
+	}
+	50%{
+		background-color:orange;
+	}
+	55%{
+		background-color:lightgreen;
+	}
+	60%{
+		background-color:white;
+	}
+	65%{
+		background-color:purple;
+	}
+	70%{
+		background-color:paleturquoise;
+	}
+	75%{
+		background-color:aqua;
+	}
+	80%{
+		background-color:maroon;
+	}
+	85%{
+		background-color:orchid;
+	}
+	90%{
+		background-color:darkgoldenrod;
+	}
+	95%{
+		background-color:peachpuff;
+	}
+	100%{
+		background-color:lightskyblue;
+	}
