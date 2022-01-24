@@ -5,68 +5,176 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> EttiPub: Sign In Here</title>
 </head>
+<style media="screen">
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(bg2.jpg);
+    background-size: cover;
+  }
+  .box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  .box h2{
+    margin: 0 0 30px;
+    padding: 0px;
+    color: #fff;
+    text-align: center;
+  }
+  .box .input-box{
+    position: relative;
+  }
+  .box .input-box input{
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+  }
+  .box .input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+  }
+  .box .input-box input:focus ~ label,
+  .box .input-box input:valid ~ label{
+    top: -18px;
+    left: 0px;
+    color: #03a9f4;
+    font-size: 12px;
+  }
+  .box input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #227be3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+  }
+  .box input[type="submit"]:hover{
+    background-color: #3067b9;
+  }
+
+  </style>
 <body background="bg.png">
 	<link rel="stylesheet" type="text/css" href="in.css">
 
 <center><img src="EttiPub.png" height="80%" width="20%" border="5px"></center>
 <br>
-<h2 align="center"><font color="white"> `' Glad to see you here, Please `Signin`</h2></font>
+<h2 align="center"><font color="white"> `' Glad to see you here, Please `Register`</h2></font>
 
-<form>
-	<table align="center">
-		<tr align="center">
-			<td bgcolor="black">
-			<font color="white"><i>Phone Number:</font></i>
-			</td>
-		</tr>
-			<td>
+		 	<a href="login.html">
+<p align="center"><button value="button"><font color="white" size="1px">Already Haveing A Account? Click Here</font></button></p>
+</a>
 
-				<select>
-					<option>+880</option>
-					<option>+91</option>
-					<option>+92</option>
-				</select>
-				<input type="phone" name="pn" placeholder="Bangladesh" align="center">
-			</td>
+<form action="https://sheetdb.io/api/v1/21uixlq69gk32" method="POST" id="sheetdb-form">
+	<table align="center" style="border-radius: 20px">
 			<tr align="center">
-				<td bgcolor="black">
-
+				<td bgcolor="black" style="border-radius: 20px">
 					<font color="white"><i> User Name:</font></i>
 					<br>
 				</td>
 		<tr>		
 <td>
-	<input type="text" name="un" placeholder="Your UserName" align="center">
+	<input type="text" name="data[name]" placeholder="Your UserName" align="center" autocomplete="off" required>
 </td>
 
+
+
+		<tr align="center">
+			<td bgcolor="black" style="border-radius: 20px">
+			<font color="white"><i>Phone Number:</font></i>
+			</td>
+		</tr>
+			<td>
+
+				<select name="data[country]">
+					<option>+880</option>
+					<option>+91</option>
+					<option>+92</option>
+				</select>
+				<input type="phone" name="data[phone]" placeholder="Bangladesh" align="center" autocomplete="off" required>
+			</td>
+		
+
 			</tr>
+
+
 <tr>
-	<td bgcolor="black" style="color: white;">
-		<center><i>Select Your Gender</i></center>
+<td bgcolor="black" style="border-radius: 20px" align="center">
+			<font color="white"><i>Email Address:</font></i>
+
+</td>
+</tr>
+<tr>
+<td>
+	<input type="email" name="data[email]" placeholder="Email Address">
+</td>
+
+
+</tr>
+
+<tr>
+	<td bgcolor="black" style="border-radius: 20px">
+		<font color="white"><center><i>Select Your Gender</i></center></font>
 	</td>
 </tr>
 <tr>
 <td>
-	<select>
-					<option>Male</option>
-					<option>Female</option>
-					<option>Third-Gender(Custom)</option>
-				</select>
+		 <input type="radio" name="data[gender]"> Male
+		 <input type="radio" name="data[gender]"> Female
+		 <input type="radio" name="data[gender]"> Third-Gender
+
 </td>
 
 </tr>
 	</table>
-
+<br>
+<center><button type="submit"> Submit My Registration </button></center>
 </form>
 
-<a href="Choiceit.html">
-	
-<p align="center"><button value="button"><font color="red">Let's Log in</font></button></p>
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      alert('Your Registration has been complete. Login now')
+    });
+  });
+</script>
+
+	<a href="login.html">
+<p align="center"><button value="button"><font color="white" size="5px">After Registration, Click Here!</font></button></p>
 </a>
 
-<a href="workers.html">
-	<center><button style="background-color: whitesmoke;" style="border-radius: 5px;"> New Here? <u style="color: orangered;">Register Now</u></button></center>
-</a>
 
 <div>
 <audio src="thingshesaid.mp3" loop autoplay>
