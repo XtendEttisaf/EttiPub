@@ -257,6 +257,7 @@ border: none;
 <center><button type="submit"> Submit My Registration </button></center>
 </form>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   var form = document.getElementById('sheetdb-form');
   form.addEventListener("submit", e => {
@@ -268,11 +269,11 @@ border: none;
         response => response.json()
     ).then((html) => {
       // you can put any JS code here
-      alert('Your Registration has been complete. Login now')
+      swal("Registration Done!", "Your Registration has been registered", "success");
     });
   });
 </script>
-
+ 
 	<a href="login.html">
 <p align="center"><button value="button"><font color="white" size="5px">After Registration, Click Here!</font></button></p>
 </a>
