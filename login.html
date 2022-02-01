@@ -27,6 +27,23 @@
     padding: 0px;
     color: #fff;
     text-align: center;
+    margin-bottom:4px ;
+    border-bottom: 5px solid red;
+    text-align: center;
+    width: 30%;
+    transition: ease-out 1s;
+    cursor: pointer;
+  }
+
+   .box h2:hover{
+    margin: 0 0 30px;
+    padding: 0px;
+    color: #fff;
+    text-align: center;
+    margin-bottom:4px ;
+    border-bottom: 5px solid yellow;
+    width: 100%;
+
   }
   .box .input-box{
     position: relative;
@@ -74,25 +91,52 @@
     background-color: #3067b9;
   }
 
+  .box button{
+    padding: 7px;
+    border-radius: 10px;
+    transition: ease-out 0.09s;
+    color: black;
+    font-family: "Audiowide", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: red;
+    box-shadow: rgba(255,0,0, 1.0);
+    outline: none;
+  }
+
+  .box button:hover{
+    padding: 10px;
+    box-shadow: rgba(255,255,0, 1.0);
+    background: rgba(255,255,0, 1.0);
+    direction: row;
+    outline: none;
+  }
+
+  
+
   </style>
-  <title>EttiPub : Login</title>
+  <title>XtendShop : Login</title>
 </head>
 <body>
-  <link rel="stylesheet" type="text/css" href="shopcss.css">
-          <center>
-<br>
 
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">  
+         
+    <form>
+  <div>
+
+  <div class="box">
+    <center>
+    <h2>Login</h2></center>
+    <form>
+       <center>
+<br><br>
 <a href="signin.html">
-<button><i>`' Go Back to the First Page</i></button>
+<button id="hover"> Go Back to the First Page</button>
 </a>
 
   </center> 
-    </form>
-  </div>
-
-  <div class="box">
-    <h2>Login</h2>
-    <form>
+  <br>
       <div class="input-box">
         <input type="text" name="username" autocomplete="off" required placeholder="UserName">
         
@@ -112,8 +156,9 @@
         </center>
         <input type="number" name="email" autocomplete="off" required placeholder="Phone Number">
         
+        
         <center>
-          <button formaction="Choiceit.html">Login on EttiPub</button></center>
+          <button formaction="Choiceit.html">Login on XtendShop</button></center>
         </div>
 
       </form>
